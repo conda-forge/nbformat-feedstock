@@ -5,7 +5,7 @@ Home: http://jupyter.org
 
 Package license: BSD 3-clause
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: the base implementation of the Jupyter Notebook format
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/nbformat-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/nbformat-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/nbformat-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/nbformat-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/nbformat-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/nbformat-feedstock/branch/master)
