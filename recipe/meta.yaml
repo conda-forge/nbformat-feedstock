@@ -1,4 +1,4 @@
-{% set version = "4.0.1" %}
+{% set version = "4.1.0" %}
 
 package:
   name: nbformat
@@ -6,12 +6,12 @@ package:
 
 source:
   fn: nbformat-{{ version }}.tar.gz
-  url: https://github.com/jupyter/nbformat/archive/{{ version }}.tar.gz
-  md5: ab7172e517c9d561c0c01eef5631b4c8
+  url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
+  sha256: dbf6c0ed0cb7c5a7184536368f1dd1ada2d48fd6f016e0f9e9b69236e28c0857
 
 build:
   number: 0
-  script: python setup.py install
+  script: pip install --no-deps .
 
 requirements:
   build:
