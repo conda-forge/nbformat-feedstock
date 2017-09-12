@@ -15,6 +15,7 @@ build:
   # fixme: remove redundant conda entrypoints when we can
   entry_points:
     - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance
+  noarch: python
 
 requirements:
   build:
