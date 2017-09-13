@@ -14,9 +14,7 @@ Summary: The Jupyter Notebook format
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/nbformat-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/nbformat-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/nbformat-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/nbformat-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/nbformat-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/nbformat-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/nbformat-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/nbformat-feedstock)
 
 Current release info
 ====================
