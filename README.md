@@ -7,7 +7,7 @@ Package license: BSD 3-clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: the base implementation of the Jupyter Notebook format
+Summary: The Jupyter Notebook format
 
 
 
