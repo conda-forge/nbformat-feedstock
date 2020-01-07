@@ -5,24 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  fn: nbformat-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
-  sha256: f7494ef0df60766b7cabe0a3651556345a963b74dbc16bc7c18479041170d402 
+  sha256: cca9a1acfd4e049dcd6c3628d3c84db8e48a770182fb7b87d6a62f9ceacfae39 
 
 build:
-  noarch: python
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  # fixme: remove redundant conda entrypoints when we can
   entry_points:
     - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - ipython_genutils
     - traitlets >=4.1
     - jsonschema >=2.4,!=2.5.0
@@ -36,7 +34,7 @@ test:
 
 about:
   home: http://jupyter.org
-  license: BSD 3-clause
+  license: BSD-3-Clause
   summary: The Jupyter Notebook format
   license_file: COPYING.md
 
