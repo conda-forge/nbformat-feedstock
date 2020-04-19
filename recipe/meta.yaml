@@ -28,7 +28,10 @@ requirements:
 
 test:
   commands:
+    - pip check
     - jupyter-trust -h
+  requires:
+    - pip
   imports:
     - nbformat
 
