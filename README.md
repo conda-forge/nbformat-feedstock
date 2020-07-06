@@ -5,7 +5,7 @@ Home: http://jupyter.org
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: The Jupyter Notebook format
 
