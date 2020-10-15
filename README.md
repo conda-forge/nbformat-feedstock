@@ -5,11 +5,9 @@ Home: http://jupyter.org
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbformat-feedstock/blob/master/LICENSE.txt)
 
 Summary: The Jupyter Notebook format
-
-
 
 Current build status
 ====================
