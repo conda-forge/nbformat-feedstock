@@ -11,6 +11,8 @@ Summary: The Jupyter Notebook format
 
 Development: https://github.com/jupyter/nbformat
 
+Documentation: https://nbformat.readthedocs.io
+
 Current build status
 ====================
 
