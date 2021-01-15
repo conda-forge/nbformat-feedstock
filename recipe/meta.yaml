@@ -49,7 +49,7 @@ about:
   license: BSD-3-Clause
   summary: The Jupyter Notebook format
   license_file: COPYING.md
-  docs_url: https://nbformat.readthedocs.io
+  doc_url: https://nbformat.readthedocs.io
   dev_url: https://github.com/jupyter/nbformat
 
 extra:
