@@ -1,4 +1,8 @@
 {% set version = "5.1.2" %}
+# TODO: investigate upstream (whether it is expected these should exist)
+{% set k_skips = ["upgrade_v4_to_4_dot_5", "sample_notebook"] %}
+# TODO: determine whether this is OS-specific (happens)
+{% set cov_min = 70 %}
 
 package:
   name: nbformat
@@ -30,8 +34,13 @@ test:
   commands:
     - pip check
     - jupyter-trust -h
+    - pytest -vv --pyargs nbformat --cov nbformat --no-cov-on-fail --cov-fail-under={{ cov_min }} -k "not ({{ ' or '.join(k_skips) }})"
   requires:
     - pip
+    - pytest
+    - pytest-cov
+    - python-fastjsonschema
+    - testpath
   imports:
     - nbformat
 
