@@ -1,13 +1,15 @@
 About nbformat
 ==============
 
-Home: http://jupyter.org
+Home: https://jupyter.org
 
 Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbformat-feedstock/blob/master/LICENSE.txt)
 
 Summary: The Jupyter Notebook format
+
+Development: https://github.com/jupyter/nbformat
 
 Current build status
 ====================
@@ -114,6 +116,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@jakirkham](https://github.com/jakirkham/)
 * [@minrk](https://github.com/minrk/)
 * [@mpacer](https://github.com/mpacer/)
