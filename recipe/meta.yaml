@@ -1,4 +1,4 @@
-{% set version = "5.1.0" %}
+{% set version = "5.1.2" %}
 
 package:
   name: nbformat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
-  sha256: 693616f25534a61fa3e02223073a88bc422eb0badbaf0b9f03c7b9764fceb4b9
+  sha256: 1d223e64a18bfa7cdf2db2e9ba8a818312fc2a0701d2e910b58df66809385a56
 
 build:
   number: 0
