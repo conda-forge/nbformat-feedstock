@@ -9,7 +9,7 @@ source:
   sha256: 1d223e64a18bfa7cdf2db2e9ba8a818312fc2a0701d2e910b58df66809385a56
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -30,16 +30,25 @@ test:
   commands:
     - pip check
     - jupyter-trust -h
+    # TODO: -k: investigate upstream whether it is expected these should exist)
+    # TODO: --cov-fail-under: determine whether this is OS-specific (happens)
+    - pytest -vv --pyargs nbformat --cov nbformat --no-cov-on-fail --cov-fail-under "70" -k "not (upgrade_v4_to_4_dot_5 or sample_notebook)"
   requires:
     - pip
+    - pytest
+    - pytest-cov
+    - python-fastjsonschema
+    - testpath
   imports:
     - nbformat
 
 about:
-  home: http://jupyter.org
+  home: https://jupyter.org
   license: BSD-3-Clause
   summary: The Jupyter Notebook format
   license_file: COPYING.md
+  doc_url: https://nbformat.readthedocs.io
+  dev_url: https://github.com/jupyter/nbformat
 
 extra:
   recipe-maintainers:
@@ -49,3 +58,4 @@ extra:
     - takluyver
     - ocefpaf
     - mpacer
+    - bollwyvl
