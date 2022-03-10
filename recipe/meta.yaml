@@ -27,12 +27,13 @@ requirements:
     - jupyter_core
 
 test:
+  source_files:
+    - tests
   commands:
     - pip check
-    - jupyter-trust -h
-    # TODO: -k: investigate upstream whether it is expected these should exist)
-    # TODO: --cov-fail-under: determine whether this is OS-specific (happens)
-    - pytest -vv --pyargs nbformat --cov nbformat --no-cov-on-fail --cov-fail-under "70" -k "not (upgrade_v4_to_4_dot_5 or sample_notebook)"
+    - jupyter trust --version
+    - jupyter-trust --help
+    - pytest -vv --cov nbformat --cov-report term-missing:skip-covered --no-cov-on-fail --cov-fail-under 79
   requires:
     - pip
     - pytest
