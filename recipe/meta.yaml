@@ -17,14 +17,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
     - pip
-  run:
     - python >=3.7
-    - ipython_genutils
-    - traitlets >=4.1
+  run:
     - jsonschema >=2.4,!=2.5.0
     - jupyter_core
+    - python >=3.7
+    - traitlets >=4.1
 
 test:
   source_files:
