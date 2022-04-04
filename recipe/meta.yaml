@@ -23,6 +23,7 @@ requirements:
     - jsonschema >=2.4,!=2.5.0
     - jupyter_core
     - python >=3.7
+    - python-fastjsonschema
     - traitlets >=4.1
 
 test:
@@ -37,7 +38,6 @@ test:
     - pip
     - pytest
     - pytest-cov
-    - python-fastjsonschema
     - testpath
   imports:
     - nbformat
