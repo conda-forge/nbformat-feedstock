@@ -20,11 +20,11 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - jsonschema >=2.4,!=2.5.0
+    - jsonschema >=2.6
     - jupyter_core
     - python >=3.7
     - python-fastjsonschema
-    - traitlets >=4.1
+    - traitlets >=5.1
 
 test:
   source_files:
