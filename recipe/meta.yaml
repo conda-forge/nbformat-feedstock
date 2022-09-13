@@ -1,4 +1,4 @@
-{% set version = "5.4.0" %}
+{% set version = "5.5.0" %}
 
 package:
   name: nbformat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
-  sha256: 44ba5ca6acb80c5d5a500f1e5b83ede8cbe364d5a495c4c8cf60aaf1ba656501
+  sha256: 9ebe30e6c3b3e5b47d39ff0a3897a1acf523d2bfafcb4e2d04cdb70f8a66c507
 
 build:
   number: 0
@@ -17,6 +17,7 @@ build:
 
 requirements:
   host:
+    - flit-core >=3.2,<4
     - pip
     - python >=3.7
   run:
@@ -33,8 +34,9 @@ test:
     - pip check
     - jupyter trust --version
     - jupyter-trust --help
-    - pytest -vv --cov nbformat --cov-report term-missing:skip-covered --no-cov-on-fail --cov-fail-under 79
+    - pytest -vv --cov=nbformat --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=76
   requires:
+    - pep440
     - pip
     - pytest
     - pytest-cov
@@ -46,6 +48,9 @@ about:
   home: https://jupyter.org
   license: BSD-3-Clause
   summary: The Jupyter Notebook format
+  description: |-
+    This package contains the base implementation of the Jupyter Notebook format,
+    and Python APIs for working with notebooks.
   license_file: COPYING.md
   doc_url: https://nbformat.readthedocs.io
   dev_url: https://github.com/jupyter/nbformat
