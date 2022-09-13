@@ -34,7 +34,7 @@ test:
     - pip check
     - jupyter trust --version
     - jupyter-trust --help
-    - pytest -vv --cov=nbformat --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=79
+    - pytest -vv --cov=nbformat --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=76
   requires:
     - pep440
     - pip
