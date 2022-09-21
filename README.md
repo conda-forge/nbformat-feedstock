@@ -13,6 +13,9 @@ Development: https://github.com/jupyter/nbformat
 
 Documentation: https://nbformat.readthedocs.io
 
+This package contains the base implementation of the Jupyter Notebook format,
+and Python APIs for working with notebooks.
+
 Current build status
 ====================
 
