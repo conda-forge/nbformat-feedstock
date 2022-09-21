@@ -1,4 +1,4 @@
-{% set version = "5.5.0" %}
+{% set version = "5.6.0" %}
 
 package:
   name: nbformat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
-  sha256: 9ebe30e6c3b3e5b47d39ff0a3897a1acf523d2bfafcb4e2d04cdb70f8a66c507
+  sha256: 6f9edb3b70119d82ba89b74b0ecfdbb83f35af8661e491e49ac0893657042674
 
 build:
   number: 0
@@ -17,7 +17,8 @@ build:
 
 requirements:
   host:
-    - flit-core >=3.2,<4
+    - hatch-nodejs-version
+    - hatchling >=1.5
     - pip
     - python >=3.7
   run:
