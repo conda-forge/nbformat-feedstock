@@ -22,7 +22,7 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - importlib-metadata
+    - importlib-metadata >=3.6
     - jsonschema >=2.6
     - jupyter_core
     - python >=3.7
@@ -41,7 +41,7 @@ test:
     - jupyter-trust --help
     - pytest -vv --cov=nbformat --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=76
   requires:
-    - m2-grep # [win]
+    - m2-grep  # [win]
     - pep440
     - pip
     - pytest
