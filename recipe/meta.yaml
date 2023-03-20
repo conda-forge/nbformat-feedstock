@@ -57,7 +57,7 @@ about:
   description: |-
     This package contains the base implementation of the Jupyter Notebook format,
     and Python APIs for working with notebooks.
-  license_file: COPYING.md
+  license_file: LICENSE
   doc_url: https://nbformat.readthedocs.io
   dev_url: https://github.com/jupyter/nbformat
 
