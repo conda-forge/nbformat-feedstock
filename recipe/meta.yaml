@@ -1,4 +1,4 @@
-{% set version = "5.7.3" %}
+{% set version = "5.8.0" %}
 
 package:
   name: nbformat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
-  sha256: 4b021fca24d3a747bf4e626694033d792d594705829e5e35b14ee3369f9f6477
+  sha256: 46dac64c781f1c34dfd8acba16547024110348f9fc7eab0f31981c2a3dc48d1f
 
 build:
   number: 0
@@ -57,7 +57,7 @@ about:
   description: |-
     This package contains the base implementation of the Jupyter Notebook format,
     and Python APIs for working with notebooks.
-  license_file: COPYING.md
+  license_file: LICENSE
   doc_url: https://nbformat.readthedocs.io
   dev_url: https://github.com/jupyter/nbformat
 
