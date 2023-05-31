@@ -20,12 +20,11 @@ requirements:
     - hatch-nodejs-version
     - hatchling >=1.5
     - pip
-    - python >=3.7
+    - python >=3.8
   run:
-    - importlib-metadata >=3.6
     - jsonschema >=2.6
     - jupyter_core
-    - python >=3.7
+    - python >=3.8
     - python-fastjsonschema
     - traitlets >=5.1
 
