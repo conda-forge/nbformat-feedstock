@@ -1,4 +1,4 @@
-{% set version = "5.10.3" %}
+{% set version = "5.10.4" %}
 
 package:
   name: nbformat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
-  sha256: 60ed5e910ef7c6264b87d644f276b1b49e24011930deef54605188ddeb211685
+  sha256: 322168b14f937a5d11362988ecac2a4952d3d8e3a2cbeb2319584631226d5b3a
 
 build:
   number: 0
@@ -23,9 +23,9 @@ requirements:
     - python >=3.8
   run:
     - jsonschema >=2.6
-    - jupyter_core
+    - jupyter_core >=4.12,!=5.0.*
     - python >=3.8
-    - python-fastjsonschema
+    - python-fastjsonschema >=2.15
     - traitlets >=5.1
 
 test:
