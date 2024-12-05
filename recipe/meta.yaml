@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz
   sha256: 322168b14f937a5d11362988ecac2a4952d3d8e3a2cbeb2319584631226d5b3a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -20,11 +20,11 @@ requirements:
     - hatch-nodejs-version
     - hatchling >=1.5
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - jsonschema >=2.6
     - jupyter_core >=4.12,!=5.0.*
-    - python >=3.8
+    - python >={{ python_min }}
     - python-fastjsonschema >=2.15
     - traitlets >=5.1
 
@@ -46,6 +46,7 @@ test:
     - pytest
     - pytest-cov
     - testpath
+    - python {{ python_min }}
   imports:
     - nbformat
 
