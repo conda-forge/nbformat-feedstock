@@ -3,7 +3,7 @@ About nbformat-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbformat-feedstock/blob/main/LICENSE.txt)
 
-Home: https://jupyter.org
+Home: https://jupyter.org/
 
 Package license: BSD-3-Clause
 
@@ -11,7 +11,7 @@ Summary: The Jupyter Notebook format
 
 Development: https://github.com/jupyter/nbformat
 
-Documentation: https://nbformat.readthedocs.io
+Documentation: https://nbformat.readthedocs.io/
 
 This package contains the base implementation of the Jupyter Notebook format,
 and Python APIs for working with notebooks.
