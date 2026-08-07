@@ -15,7 +15,7 @@ source:
   sha256: 7dbaed4a69cae28c2b4d44ab7430a6af4544fb89455023f6f21550be757b60c8
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -43,20 +43,25 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - ${{ python_check_max }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip list | ${{ grep }} nbformat
+      - pip list | ${{ grep }} 'nbformat\s*${{ version | replace('.', '\.') }}'
+      - python -c "v = __import__('nbformat').__version__; print(v); assert v == '${{ version }}'"
   - files:
       source:
         - tests/
     requirements:
       run:
         - pep440
-        - pip
         - pytest
         - pytest-cov
         - python ${{ python_min }}.*
         - testpath
     script:
-      - pip list | ${{ grep }} nbformat
-      - pip list | ${{ grep }} 'nbformat\s*${{ version | replace('.', '\.') }}'
       - python -c "v = __import__('nbformat').__version__; print(v); assert v == '${{ version }}'"
       - jupyter trust --version
       - jupyter-trust --help
