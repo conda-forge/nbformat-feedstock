@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "5.11.0"
+  python_check_max: "3.14"
+  grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
+
+package:
+  name: nbformat
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/n/nbformat/nbformat-${{ version }}.tar.gz
+  sha256: 7dbaed4a69cae28c2b4d44ab7430a6af4544fb89455023f6f21550be757b60c8
+
+build:
+  number: 1
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance
+
+requirements:
+  host:
+    - hatch-nodejs-version
+    - hatchling >=1.5
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - jsonschema >=2.6
+    - jupyter_core >=4.12,!=5.0.*
+    - python >=${{ python_min }}
+    - python-fastjsonschema >=2.15
+    - traitlets >=5.1
+
+tests:
+  - python:
+      imports: nbformat
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip list | ${{ grep }} nbformat
+      - pip list | ${{ grep }} 'nbformat\s*${{ version | replace('.', '\.') }}'
+      - python -c "v = __import__('nbformat').__version__; print(v); assert v == '${{ version }}'"
+  - files:
+      source:
+        - tests/
+    requirements:
+      run:
+        - pep440
+        - pytest
+        - pytest-cov
+        - python ${{ python_min }}.*
+        - testpath
+    script:
+      - python -c "v = __import__('nbformat').__version__; print(v); assert v == '${{ version }}'"
+      - jupyter trust --version
+      - jupyter-trust --help
+      - coverage run --source=nbformat --branch -m pytest -vv
+      - coverage report --show-missing --skip-covered --fail-under=76
+
+about:
+  license: BSD-3-Clause
+  summary: The Jupyter Notebook format
+  description: |-
+    This package contains the base implementation of the Jupyter Notebook format,
+    and Python APIs for working with notebooks.
+  license_file: LICENSE
+  homepage: https://jupyter.org
+  repository: https://github.com/jupyter/nbformat
+  documentation: https://nbformat.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - minrk
+    - pelson
+    - takluyver
+    - ocefpaf
+    - mpacer
+    - bollwyvl
