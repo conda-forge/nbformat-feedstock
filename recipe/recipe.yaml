@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "5.11.0"
+  version: "5.11.1"
   python_check_max: "3.14"
   grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
 
@@ -12,10 +12,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/n/nbformat/nbformat-${{ version }}.tar.gz
-  sha256: 7dbaed4a69cae28c2b4d44ab7430a6af4544fb89455023f6f21550be757b60c8
+  sha256: 32d4521c68c6e7d5b29c76defaeed9f42ea733142b9b19f88277ce10390b9c4d
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
